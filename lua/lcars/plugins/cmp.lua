@@ -1,20 +1,16 @@
 local palette = require("lcars.palette")
-local util = require("lcars.util")
 
 local M = {}
 
 function M.get(opts)
   opts = opts or {}
   local c = palette.colors
-  local transparent = opts.transparent or false
-  local bg = transparent and "NONE" or c.bg
 
   local groups = {
     CmpItemAbbr = { fg = c.fg },
     CmpItemAbbrDeprecated = { fg = c.gray, strikethrough = true },
-    CmpItemAbbrMatch = { fg = c.orange, bold = true },
+    CmpItemAbbrMatch = { fg = c.orange },
     CmpItemAbbrMatchFuzzy = { fg = c.orange },
-    CmpItemAbbrSelected = { fg = c.orange, bg = c.gray_dark, bold = true },
     CmpItemMenu = { fg = c.gray },
 
     CmpItemKindDefault = { fg = c.fg },
@@ -49,12 +45,11 @@ function M.get(opts)
     CmpItemKindFolder = { fg = c.blue },
     CmpItemKindColor = { fg = c.pink },
 
-    CmpDocumentation = { fg = c.fg, bg = util.blend(c.lilac, c.bg, 0.08) },
-    CmpDocumentationBorder = { fg = c.lilac, bg = util.blend(c.lilac, c.bg, 0.08) },
+    CmpDocumentation = { fg = c.fg, bg = c.gray_darker },
+    CmpDocumentationBorder = { fg = c.lilac, bg = c.gray_darker },
   }
 
   return groups
 end
 
 return M
-

@@ -1,5 +1,4 @@
 local palette = require("lcars.palette")
-local util = require("lcars.util")
 
 local M = {}
 
@@ -24,4 +23,3 @@ function M.get(opts)
 end
 
 return M
-

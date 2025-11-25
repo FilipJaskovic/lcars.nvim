@@ -1,5 +1,4 @@
 local palette = require("lcars.palette")
-local util = require("lcars.util")
 
 local M = {}
 
@@ -16,11 +15,11 @@ function M.get(opts)
     DiagnosticOk = { fg = c.green },
 
     -- Virtual text
-    DiagnosticVirtualTextError = { fg = c.red_bright, bg = util.blend(c.red_bright, c.bg, 0.1) },
-    DiagnosticVirtualTextWarn = { fg = c.orange, bg = util.blend(c.orange, c.bg, 0.1) },
-    DiagnosticVirtualTextInfo = { fg = c.green, bg = util.blend(c.green, c.bg, 0.1) },
-    DiagnosticVirtualTextHint = { fg = c.cyan, bg = util.blend(c.cyan, c.bg, 0.1) },
-    DiagnosticVirtualTextOk = { fg = c.green, bg = util.blend(c.green, c.bg, 0.1) },
+    DiagnosticVirtualTextError = { fg = c.red_bright, bg = c.gray_darker },
+    DiagnosticVirtualTextWarn = { fg = c.orange, bg = c.gray_darker },
+    DiagnosticVirtualTextInfo = { fg = c.green, bg = c.gray_darker },
+    DiagnosticVirtualTextHint = { fg = c.cyan, bg = c.gray_darker },
+    DiagnosticVirtualTextOk = { fg = c.green, bg = c.gray_darker },
 
     -- Underlines
     DiagnosticUnderlineError = { undercurl = true, sp = c.red_bright },
@@ -52,4 +51,3 @@ function M.get(opts)
 end
 
 return M
-

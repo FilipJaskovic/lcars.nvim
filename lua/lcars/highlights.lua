@@ -3,76 +3,69 @@ local util = require("lcars.util")
 
 local M = {}
 
--- Generate core UI highlight groups
 function M.get(opts)
   opts = opts or {}
   local c = palette.colors
-  local ui = palette.ui
   local transparent = opts.transparent or false
-
   local bg = transparent and "NONE" or c.bg
-  local float_bg = transparent and "NONE" or util.blend(c.lilac, c.bg, 0.92)
-  local cursorline_bg = transparent and util.blend(c.lilac, c.bg, 0.94) or util.blend(c.lilac, c.bg, 0.94)
-  local visual_bg = util.blend(c.pink, c.bg, 0.55)
-  local pmenu_sel_bg = ui.pmenu_sel_bg
 
   local groups = {
     Normal = { fg = c.fg, bg = bg },
     NormalNC = { fg = c.fg, bg = bg },
-    NormalFloat = { fg = c.fg, bg = float_bg },
-    FloatBorder = { fg = c.lilac, bg = float_bg },
-    FloatTitle = { fg = c.orange, bg = float_bg, bold = true },
+    NormalFloat = { fg = c.fg, bg = c.gray_darker },
+    FloatBorder = { fg = c.lilac, bg = c.gray_darker },
+    FloatTitle = { fg = c.orange, bg = c.gray_darker },
 
-    Cursor = { fg = c.bg, bg = ui.cursor },
-    CursorIM = { fg = c.bg, bg = ui.cursor },
-    CursorLine = { bg = cursorline_bg },
-    CursorLineNr = { fg = c.orange, bold = true },
-    LineNr = { fg = palette.colors.lilac },
+    Cursor = { fg = c.bg, bg = c.fg },
+    CursorIM = { fg = c.bg, bg = c.fg },
+    CursorLine = { bg = c.gray_darker },
+    CursorLineNr = { fg = c.orange },
+    LineNr = { fg = c.lilac },
     SignColumn = { fg = c.fg, bg = bg },
-    ColorColumn = { bg = util.blend(c.lilac, c.bg, 0.90) },
-    CursorColumn = { bg = util.blend(c.lilac, c.bg, 0.92) },
+    ColorColumn = { bg = c.gray_darker },
+    CursorColumn = { bg = c.gray_darker },
 
-    StatusLine = { fg = c.pink, bg = c.bg, bold = true },
+    StatusLine = { fg = c.pink, bg = c.gray_darker },
     StatusLineNC = { fg = c.gray, bg = c.bg },
     WinSeparator = { fg = c.purple, bg = bg },
     VertSplit = { fg = c.purple, bg = bg },
     TabLine = { fg = c.lilac, bg = c.bg },
     TabLineFill = { fg = c.gray, bg = c.bg },
-    TabLineSel = { fg = c.purple, bg = c.bg, bold = true },
+    TabLineSel = { fg = c.purple, bg = c.gray_darker },
 
-    Search = { fg = c.orange, bg = c.gray_dark, bold = true },
-    IncSearch = { fg = c.yellow, bg = c.gray_dark, bold = true },
-    CurSearch = { fg = c.orange, bg = c.gray_dark, bold = true },
+    Search = { fg = c.orange, bg = c.gray_dark },
+    IncSearch = { fg = c.yellow, bg = c.gray_dark },
+    CurSearch = { fg = c.orange, bg = c.gray_dark },
     Visual = { bg = c.gray_dark },
     VisualNOS = { bg = c.gray_dark },
-    MatchParen = { fg = c.yellow, bg = c.gray_dark, bold = true },
+    MatchParen = { fg = c.yellow, bg = c.gray_dark },
 
     Pmenu = { fg = c.fg, bg = c.gray_darker },
-    PmenuSel = { fg = c.orange, bg = c.gray_dark, bold = true },
-    PmenuKind = { fg = c.purple },
-    PmenuKindSel = { fg = c.purple, bg = c.gray_dark, bold = true },
-    PmenuExtra = { fg = c.gray },
+    PmenuSel = { fg = c.orange, bg = c.gray_dark },
+    PmenuKind = { fg = c.purple, bg = c.gray_darker },
+    PmenuKindSel = { fg = c.purple, bg = c.gray_dark },
+    PmenuExtra = { fg = c.gray, bg = c.gray_darker },
     PmenuExtraSel = { fg = c.gray, bg = c.gray_dark },
     PmenuSbar = { bg = c.gray_dark },
     PmenuThumb = { bg = c.purple },
 
-    Folded = { fg = c.lilac, bg = util.blend(c.lilac, c.bg, 0.12) },
+    Folded = { fg = c.lilac, bg = c.gray_darker },
     FoldColumn = { fg = c.lilac, bg = bg },
 
-    Title = { fg = c.orange, bold = true },
-    NonText = { fg = util.blend(c.fg, c.bg, 0.25) },
-    Whitespace = { fg = util.blend(c.fg, c.bg, 0.2) },
+    Title = { fg = c.orange },
+    NonText = { fg = c.gray },
+    Whitespace = { fg = c.gray_dark },
     SpecialKey = { fg = c.purple },
-    EndOfBuffer = { fg = util.blend(c.fg, c.bg, 0.1) },
+    EndOfBuffer = { fg = c.gray_dark },
 
-    Directory = { fg = c.purple, bold = true },
-    Error = { fg = c.red_bright, bold = true },
-    WarningMsg = { fg = c.orange, bold = true },
-    MoreMsg = { fg = c.green, bold = true },
-    Question = { fg = c.blue, bold = true },
+    Directory = { fg = c.purple },
+    Error = { fg = c.red_bright },
+    WarningMsg = { fg = c.orange },
+    MoreMsg = { fg = c.green },
+    Question = { fg = c.blue },
 
-    QuickFixLine = { bg = util.blend(c.yellow, c.bg, 0.15) },
-    WildMenu = { fg = c.orange, bg = c.gray_dark, bold = true },
+    QuickFixLine = { bg = c.gray_dark },
+    WildMenu = { fg = c.orange, bg = c.gray_dark },
 
     SpellBad = { undercurl = true, sp = c.red_bright },
     SpellCap = { undercurl = true, sp = c.blue },
@@ -84,5 +77,3 @@ function M.get(opts)
 end
 
 return M
-
-

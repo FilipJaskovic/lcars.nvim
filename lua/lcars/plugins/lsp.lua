@@ -1,5 +1,4 @@
 local palette = require("lcars.palette")
-local util = require("lcars.util")
 
 local M = {}
 
@@ -51,23 +50,22 @@ function M.get(opts)
     ["@lsp.typemod.property.readonly"] = { fg = c.yellow },
 
     -- LSP References
-    LspReferenceText = { bg = util.blend(c.gray, c.bg, 0.3) },
-    LspReferenceRead = { bg = util.blend(c.cyan, c.bg, 0.2) },
-    LspReferenceWrite = { bg = util.blend(c.cyan, c.bg, 0.25), bold = true },
+    LspReferenceText = { bg = c.gray_dark },
+    LspReferenceRead = { bg = c.gray_dark },
+    LspReferenceWrite = { bg = c.gray_dark },
 
     -- LSP Signature Help
-    LspSignatureActiveParameter = { fg = c.orange, bold = true, underline = true },
+    LspSignatureActiveParameter = { fg = c.orange, underline = true },
 
     -- LSP CodeLens
-    LspCodeLens = { fg = c.lilac },
+    LspCodeLens = { fg = c.gray },
     LspCodeLensSeparator = { fg = c.gray },
 
     -- LSP Inlay Hints (Neovim 0.10+)
-    LspInlayHint = { fg = c.gray, bg = util.blend(c.lilac, c.bg, 0.07), italic = true },
+    LspInlayHint = { fg = c.gray, bg = c.gray_darker, italic = true },
   }
 
   return groups
 end
 
 return M
-

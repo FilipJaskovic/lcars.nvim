@@ -1,5 +1,4 @@
 local palette = require("lcars.palette")
-local util = require("lcars.util")
 
 local M = {}
 
@@ -13,24 +12,24 @@ function M.get(opts)
     NvimTreeNormal = { fg = c.fg, bg = bg },
     NvimTreeNormalNC = { fg = c.fg, bg = bg },
     NvimTreeWinSeparator = { fg = c.purple, bg = bg },
-    NvimTreeCursorLine = { bg = util.blend(c.lilac, c.bg, 0.12) },
+    NvimTreeCursorLine = { bg = c.gray_dark },
 
-    NvimTreeRootFolder = { fg = c.pink, bold = true },
+    NvimTreeRootFolder = { fg = c.pink },
     NvimTreeFolderName = { fg = c.purple },
     NvimTreeFolderIcon = { fg = c.blue },
     NvimTreeEmptyFolderName = { fg = c.gray },
-    NvimTreeOpenedFolderName = { fg = c.purple, bold = true },
+    NvimTreeOpenedFolderName = { fg = c.purple },
     NvimTreeSymlinkFolderName = { fg = c.cyan },
 
     NvimTreeFileName = { fg = c.fg },
-    NvimTreeOpenedFile = { fg = c.fg, bold = true },
+    NvimTreeOpenedFile = { fg = c.fg },
     NvimTreeModifiedFile = { fg = c.link },
-    NvimTreeSpecialFile = { fg = c.orange, bold = true },
-    NvimTreeExecFile = { fg = c.green, bold = true },
+    NvimTreeSpecialFile = { fg = c.orange },
+    NvimTreeExecFile = { fg = c.green },
     NvimTreeSymlink = { fg = c.cyan },
     NvimTreeImageFile = { fg = c.lilac },
 
-    NvimTreeIndentMarker = { fg = util.blend(c.lilac, c.bg, 0.3) },
+    NvimTreeIndentMarker = { fg = c.gray_dark },
     NvimTreeBookmark = { fg = c.pink },
     NvimTreeBookmarkIcon = { fg = c.pink },
 
@@ -47,4 +46,3 @@ function M.get(opts)
 end
 
 return M
-
