@@ -1,0 +1,164 @@
+*lcars.txt*  Star Trek LCARS-inspired colorscheme for Neovim
+
+Author:   FilipJaskovic
+License:  MIT
+Homepage: https://github.com/FilipJaskovic/lcars.nvim
+
+==============================================================================
+CONTENTS                                                        *lcars-contents*
+
+  1. Introduction ............................................. |lcars-intro|
+  2. Requirements ......................................... |lcars-requirements|
+  3. Installation ......................................... |lcars-installation|
+  4. Configuration ....................................... |lcars-configuration|
+  5. Lualine ................................................... |lcars-lualine|
+  6. Palette ................................................... |lcars-palette|
+  7. Integrations ......................................... |lcars-integrations|
+
+==============================================================================
+1. INTRODUCTION                                                    *lcars-intro*
+
+LCARS.nvim is a Star Trek LCARS-inspired colorscheme for Neovim, ported from
+the VS Code LCARS Theme. It features full Treesitter support, LSP semantic
+token highlighting, and integrations with popular plugins.
+
+==============================================================================
+2. REQUIREMENTS                                             *lcars-requirements*
+
+- Neovim >= 0.9.0
+- `termguicolors` must be enabled:
+>lua
+  vim.opt.termguicolors = true
+<
+
+==============================================================================
+3. INSTALLATION                                             *lcars-installation*
+
+Using lazy.nvim:
+>lua
+  {
+    "hayzey/lcars.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("lcars").setup()
+      vim.cmd.colorscheme("lcars")
+    end,
+  }
+<
+
+Using packer.nvim:
+>lua
+  use {
+    "hayzey/lcars.nvim",
+    config = function()
+      require("lcars").setup()
+      vim.cmd.colorscheme("lcars")
+    end,
+  }
+<
+
+==============================================================================
+4. CONFIGURATION                                           *lcars-configuration*
+
+                                                                  *lcars.setup()*
+lcars.setup({opts})
+
+  Configure and apply the LCARS colorscheme.
+
+  Parameters: ~
+    {opts}  (table|nil) Configuration options
+
+  Options: ~
+    transparent       (boolean) Enable transparent background. Default: false
+    italic_comments   (boolean) Use italic for comments. Default: true
+    bold_keywords     (boolean) Use bold for keywords. Default: false
+    plugins           (table)   Plugin integrations to enable
+
+  Plugin options: ~
+    treesitter  (boolean) Treesitter highlights. Default: true
+    lsp         (boolean) LSP semantic tokens. Default: true
+    diagnostics (boolean) Diagnostic highlights. Default: true
+    telescope   (boolean) Telescope highlights. Default: true
+    gitsigns    (boolean) Gitsigns highlights. Default: true
+    nvimtree    (boolean) NvimTree highlights. Default: true
+    cmp         (boolean) nvim-cmp highlights. Default: true
+    whichkey    (boolean) which-key highlights. Default: true
+
+  Example: ~
+>lua
+    require("lcars").setup({
+      transparent = true,
+      italic_comments = true,
+      bold_keywords = false,
+      plugins = {
+        treesitter = true,
+        lsp = true,
+        diagnostics = true,
+        telescope = true,
+        gitsigns = true,
+        nvimtree = true,
+        cmp = true,
+        whichkey = true,
+      },
+    })
+<
+
+==============================================================================
+5. LUALINE                                                       *lcars-lualine*
+
+                                                                 *lcars.lualine()*
+lcars.lualine()
+
+  Returns a lualine theme table for use with lualine.nvim.
+
+  Example: ~
+>lua
+    require("lualine").setup({
+      options = {
+        theme = require("lcars").lualine(),
+      },
+    })
+<
+
+==============================================================================
+6. PALETTE                                                       *lcars-palette*
+
+The LCARS color palette is available at `require("lcars.palette")`:
+
+  colors.bg         #000000   Editor background
+  colors.fg         #f5f6fa   Default text
+  colors.purple     #cc88ff   Variables, tags, headings
+  colors.blue       #7788ff   Functions, methods
+  colors.cyan       #88ccff   Operators, regex, builtins
+  colors.orange     #ff7700   Strings
+  colors.yellow     #ffcc66   Constants, numbers, attributes
+  colors.pink       #ffbbaa   Keywords, control flow
+  colors.lilac      #ddbbff   Types, classes, namespaces
+  colors.green      #33cc99   Success, additions, info
+  colors.red        #dd4444   Errors, deletions
+  colors.gray       #666688   Comments, muted text
+
+Terminal colors are available at `require("lcars.palette").terminal`.
+
+==============================================================================
+7. INTEGRATIONS                                             *lcars-integrations*
+
+LCARS.nvim includes highlight definitions for the following plugins:
+
+- nvim-treesitter (https://github.com/nvim-treesitter/nvim-treesitter)
+- LSP semantic tokens (Neovim 0.9+)
+- Built-in diagnostics
+- telescope.nvim (https://github.com/nvim-telescope/telescope.nvim)
+- gitsigns.nvim (https://github.com/lewis6991/gitsigns.nvim)
+- nvim-tree.lua (https://github.com/nvim-tree/nvim-tree.lua)
+- nvim-cmp (https://github.com/hrsh7th/nvim-cmp)
+- which-key.nvim (https://github.com/folke/which-key.nvim)
+- lualine.nvim (https://github.com/nvim-lualine/lualine.nvim)
+
+Each integration can be disabled individually via the `plugins` option in
+|lcars.setup()|.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
+
