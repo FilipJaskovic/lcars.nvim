@@ -43,11 +43,16 @@ function M.get(opts)
     Search = { fg = c.gray_darker, bg = c.orange, bold = true },
     IncSearch = { fg = c.gray_darker, bg = c.yellow, bold = true },
     CurSearch = { fg = c.gray_darker, bg = c.orange, bold = true },
-    Visual = { bg = visual_bg },
+    Visual = { fg = c.fg, bg = visual_bg },
+    VisualNOS = { fg = c.fg, bg = visual_bg },
     MatchParen = { fg = c.yellow, bold = true },
 
     Pmenu = { fg = c.fg, bg = ui.pmenu_bg },
     PmenuSel = { fg = c.gray_darker, bg = pmenu_sel_bg, bold = true },
+    PmenuKind = { fg = c.purple },
+    PmenuKindSel = { fg = c.gray_darker, bg = pmenu_sel_bg, bold = true },
+    PmenuExtra = { fg = c.gray },
+    PmenuExtraSel = { fg = c.gray_darker, bg = pmenu_sel_bg },
     PmenuSbar = { bg = util.blend(c.lilac, c.bg, 0.15) },
     PmenuThumb = { bg = util.blend(c.lilac, c.bg, 0.35) },
 

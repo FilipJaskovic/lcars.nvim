@@ -14,6 +14,7 @@ function M.get(opts)
     CmpItemAbbrDeprecated = { fg = c.gray, strikethrough = true },
     CmpItemAbbrMatch = { fg = c.orange, bold = true },
     CmpItemAbbrMatchFuzzy = { fg = c.orange },
+    CmpItemAbbrSelected = { fg = c.gray_darker, bold = true },
     CmpItemMenu = { fg = c.gray },
 
     CmpItemKindDefault = { fg = c.fg },
