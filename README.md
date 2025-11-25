@@ -1,6 +1,6 @@
 # LCARS.nvim
 
-A Star Trek LCARS-inspired colorscheme for Neovim, ported from the [VS Code LCARS Theme](https://marketplace.visualstudio.com/items?itemName=hayzey.lcars-theme).
+A Star Trek LCARS-inspired colorscheme for Neovim.
 
 ![LCARS Theme]()
 
