@@ -16,22 +16,22 @@ function M.get(opts)
 
     TelescopePromptNormal = { fg = c.fg, bg = bg },
     TelescopePromptBorder = { fg = c.pink, bg = bg },
-    TelescopePromptTitle = { fg = c.gray_darker, bg = c.pink, bold = true },
+    TelescopePromptTitle = { fg = c.pink, bg = c.bg, bold = true },
     TelescopePromptPrefix = { fg = c.orange },
     TelescopePromptCounter = { fg = c.gray },
 
     TelescopeResultsNormal = { fg = c.fg, bg = bg },
     TelescopeResultsBorder = { fg = c.lilac, bg = bg },
-    TelescopeResultsTitle = { fg = c.gray_darker, bg = c.lilac, bold = true },
+    TelescopeResultsTitle = { fg = c.lilac, bg = c.bg, bold = true },
 
     TelescopePreviewNormal = { fg = c.fg, bg = bg },
     TelescopePreviewBorder = { fg = c.blue, bg = bg },
-    TelescopePreviewTitle = { fg = c.gray_darker, bg = c.blue, bold = true },
-    TelescopePreviewLine = { bg = util.blend(c.lilac, c.bg, 0.15) },
+    TelescopePreviewTitle = { fg = c.blue, bg = c.bg, bold = true },
+    TelescopePreviewLine = { bg = c.gray_dark },
 
-    TelescopeSelection = { fg = c.gray_darker, bg = c.pink, bold = true },
-    TelescopeSelectionCaret = { fg = c.gray_darker, bg = c.pink },
-    TelescopeMultiSelection = { fg = c.gray_darker, bg = c.purple },
+    TelescopeSelection = { fg = c.orange, bg = c.gray_dark, bold = true },
+    TelescopeSelectionCaret = { fg = c.orange, bg = c.gray_dark },
+    TelescopeMultiSelection = { fg = c.purple, bg = c.gray_dark },
     TelescopeMultiIcon = { fg = c.orange },
 
     TelescopeMatching = { fg = c.orange, bold = true },

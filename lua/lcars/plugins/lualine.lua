@@ -7,28 +7,28 @@ function M.get()
 
   return {
     normal = {
-      a = { fg = c.gray_darker, bg = c.purple, gui = "bold" },
-      b = { fg = c.fg, bg = c.gray_dark },
+      a = { fg = c.purple, bg = c.bg, gui = "bold" },
+      b = { fg = c.lilac, bg = c.gray_dark },
       c = { fg = c.fg, bg = c.bg },
     },
     insert = {
-      a = { fg = c.gray_darker, bg = c.green, gui = "bold" },
-      b = { fg = c.fg, bg = c.gray_dark },
+      a = { fg = c.green, bg = c.bg, gui = "bold" },
+      b = { fg = c.lilac, bg = c.gray_dark },
       c = { fg = c.fg, bg = c.bg },
     },
     visual = {
-      a = { fg = c.gray_darker, bg = c.pink, gui = "bold" },
-      b = { fg = c.fg, bg = c.gray_dark },
+      a = { fg = c.pink, bg = c.bg, gui = "bold" },
+      b = { fg = c.lilac, bg = c.gray_dark },
       c = { fg = c.fg, bg = c.bg },
     },
     replace = {
-      a = { fg = c.gray_darker, bg = c.red, gui = "bold" },
-      b = { fg = c.fg, bg = c.gray_dark },
+      a = { fg = c.red, bg = c.bg, gui = "bold" },
+      b = { fg = c.lilac, bg = c.gray_dark },
       c = { fg = c.fg, bg = c.bg },
     },
     command = {
-      a = { fg = c.gray_darker, bg = c.orange, gui = "bold" },
-      b = { fg = c.fg, bg = c.gray_dark },
+      a = { fg = c.orange, bg = c.bg, gui = "bold" },
+      b = { fg = c.lilac, bg = c.gray_dark },
       c = { fg = c.fg, bg = c.bg },
     },
     inactive = {
