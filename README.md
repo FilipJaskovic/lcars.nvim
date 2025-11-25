@@ -2,7 +2,7 @@
 
 A Star Trek LCARS-inspired colorscheme for Neovim, ported from the [VS Code LCARS Theme](https://marketplace.visualstudio.com/items?itemName=hayzey.lcars-theme).
 
-![LCARS Theme](https://user-images.githubusercontent.com/12708007/151496503-7a1c198f-4aff-4d94-be6f-b10747657e46.png)
+![LCARS Theme]()
 
 ## Features
 
