@@ -35,11 +35,11 @@ M.colors = {
 M.ui = {
   cursor = "#ffcc66",
   selection = "#aaaaff",
-  selection_bg = "#aaaaff55",
-  selection_inactive_bg = "#66668855",
-  line_highlight = "#1f162633", -- derived from lilac with low alpha
+  selection_bg = "#3a3a5a",
+  selection_inactive_bg = "#2a2a3a",
+  line_highlight = "#1a1520",
   border = "#666688",
-  float_border = "#ddbbff88",
+  float_border = "#8866aa",
   pmenu_bg = "#000000",
   pmenu_sel_bg = "#ffbbaa",
 }

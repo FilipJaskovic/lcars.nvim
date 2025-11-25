@@ -1,4 +1,5 @@
 local palette = require("lcars.palette")
+local util = require("lcars.util")
 
 local M = {}
 
@@ -23,9 +24,9 @@ function M.get(opts)
     GitSignsDeletePreview = { fg = c.red },
 
     GitSignsCurrentLineBlame = { fg = c.gray, italic = true },
-    GitSignsAddInline = { bg = "#33cc9944" },
-    GitSignsDeleteInline = { bg = "#dd444444" },
-    GitSignsChangeInline = { bg = "#ffaa0044" },
+    GitSignsAddInline = { bg = util.blend(c.green, c.bg, 0.25) },
+    GitSignsDeleteInline = { bg = util.blend(c.red, c.bg, 0.25) },
+    GitSignsChangeInline = { bg = util.blend(c.link, c.bg, 0.25) },
   }
 
   return groups
